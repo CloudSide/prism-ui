@@ -1,0 +1,3 @@
+#!/bin/bash
+
+RANCHER="http://172.18.9.12:19999/" yarn start --ssl=false
