@@ -1,0 +1,17 @@
+<section class="header clearfix">
+  <h1>{{t 'certificatesPage.new.header'}}</h1>
+</section>
+
+<section class="horizontal-form container-fluid well">
+  {{form-name-description
+    model=primaryResource
+    nameRequired=true
+    namePlaceholder="certificatesPage.new.form.name.placeholder"
+    descriptionPlaceholder="certificatesPage.new.form.description.placeholder"
+  }}
+
+  {{input-certificate model=model}}
+</section>
+
+{{top-errors errors=errors}}
+{{save-cancel editing=true save="save" cancel="cancel"}}

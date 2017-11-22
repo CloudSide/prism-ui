@@ -1,0 +1,21 @@
+{{#unless isPopup}}
+  {{page-header
+    currentPath=currentPath
+    hasCattleSystem=hasCattleSystem
+    switchProject="switchProject"
+    switchNamespace="switchNamespace"
+    goToPrevious="goToPrevious"
+  }}
+{{/unless}}
+<main class="clearfix">
+  {{#if (and forceUpgrade projects.current.needsUpgrade)}}
+    {{project-upgrade model=projects.current}}
+  {{/if}}
+
+  {{outlet}}
+</main>
+{{#unless isPopup}}
+  {{page-footer
+    showAbout="showAbout"
+  }}
+{{/unless}}

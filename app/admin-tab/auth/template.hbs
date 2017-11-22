@@ -1,0 +1,17 @@
+<section class="header clearfix">
+  <h1>{{t 'authPage.root.header'}}</h1>
+</section>
+
+{{#unless access.enabled}}
+  <section class="well">
+    <div class="nav nav-boxes checked-active">
+      {{#each drivers as |driver|}}
+        {{#if driver.available}}
+          {{#link-to driver.route alt=driver.label classNames=(concat "nav-box-item driver auth-driver " driver.css) href=false}}{{/link-to}}
+        {{/if}}
+      {{/each}}
+    </div>
+  </section>
+{{/unless}}
+
+{{outlet}}

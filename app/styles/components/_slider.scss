@@ -1,0 +1,47 @@
+.slider {
+  position: relative;
+  background: $midGray;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 7px;
+  margin: 5px 0;
+
+  .slider-handle {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: -4px;
+    margin-left: -10px;
+    border-radius: 50%;
+    background-color: $lightGray;
+    border: 1px solid $midGray;
+  }
+
+  .slider-bar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $blueTwo;
+    border-radius: 3px;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+
+    .slider-handle {
+      border-color: $midGrayDark;
+      background-color: $lightGray;
+    }
+
+    .slider-bar {
+      background-color: $midGrayDark;
+      opacity: 0.6;
+    }
+  }
+
+  &.active {
+    .slider-handle {
+      background-color: $lightGrayDark;
+    }
+  }
+}

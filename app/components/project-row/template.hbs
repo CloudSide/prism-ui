@@ -1,0 +1,25 @@
+<td data-title="{{t 'generic.state'}}:" class="state">
+  {{badge-state model=model}}
+</td>
+<td data-title="{{t 'generic.name'}}:">
+  {{#link-to "settings.projects.detail" model.id (query-params editing=false)}}{{model.displayName}}{{/link-to}}
+</td>
+<td data-title="{{t 'generic.description'}}:">
+  {{#if model.description}}{{model.description}}{{else}}<span class="text-muted">{{t 'projectRow.none'}}</span>{{/if}}
+</td>
+<td data-title="{{t 'projectRow.orchestration'}}:">
+  {{#if model.projectTemplate}}
+    {{model.projectTemplate.displayName}}
+  {{else}}
+    <span class="text-muted">{{t 'generic.none'}}</span>
+  {{/if}}
+</td>
+<td data-title="{{t 'projectRow.orchestration'}}:">
+  {{model.displayOrchestration}}
+</td>
+<td data-title="{{t 'generic.default'}}:">
+  {{#if model.isDefault}}<i class="icon icon-check"></i>{{else}}<span class="text-muted">&ndash;</span>{{/if}}
+</td>
+<td data-title="{{t 'generic.actions'}}:"class="actions">
+  {{action-menu model=model}}
+</td>

@@ -1,0 +1,105 @@
+.dot {
+  float: left;
+  margin: 2px;
+  font-size: 11px;
+}
+
+.modal-shell {
+  width: 600px;
+}
+
+.machine-host {
+  min-height: 168px;
+
+  .machine-info {
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px;
+    white-space: normal;
+    color: #d2d7de;
+  }
+}
+
+
+.machine-driver {
+  &.amazonec2 {
+    @include amazonec2;
+  }
+
+  &.azure {
+    @include azure;
+  }
+
+  &.digitalocean {
+    @include digitalocean;
+  }
+
+  &.exoscale {
+    @include exoscale;
+  }
+
+  &.openstack {
+    @include openstack;
+  }
+
+  &.packet {
+    @include packet;
+  }
+
+  &.rackspace {
+    @include rackspace;
+  }
+
+  &.ubiquity {
+    @include ubiquity;
+  }
+
+  &.vmwarevsphere {
+    @include vmwarevsphere;
+  }
+
+  &.other {
+    @include other;
+  }
+
+  &.custom {
+    @include custom;
+  }
+
+  &.aliyunecs {
+    @include aliyunecs;
+  }
+  &.otc { // this should be changed to tsystems or what ever they rename there driver to.
+    @include tsystems;
+  }
+}
+
+.c3 svg {
+  font: 12px "Lato";
+}
+
+#memoryGraph,
+#cpuGraph,
+#networkGraph,
+#storageGraph {
+  .c3-axis .tick {
+    fill: #9da0ae;
+    // text-shadow: 1px 1px 0px rgba(255,255,255,.5), -1px 1px 0px rgba(255,255,255,.5), 1px -1px 0px rgba(255,255,255,.5), -1px -1px 0px rgba(255,255,255,.5);
+
+    line {
+      display: none;
+    }
+  }
+
+  .c3-axis-x {
+    display: none;
+  }
+
+  .c3-axis .domain {
+    stroke: #f3f5f7;
+  }
+}
+
+.api-field LABEL {
+  text-transform: initial;
+}

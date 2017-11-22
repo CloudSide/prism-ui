@@ -1,0 +1,28 @@
+{{#if showProtip}}
+  <div class="protip">
+      {{t 'containerLogs.protip' key=alternateLabel}}
+  </div>
+  <hr>
+{{/if}}
+<h2>
+  <i class="icon icon-file"></i> {{t 'containerLogs.title' instanceName=instance.displayName}}
+</h2>
+{{#if onlyCombinedLog}}
+  <div class="text-muted">{{format-html-message 'containerLogs.onlyCombined'}}</div>
+{{else}}
+  <ul class="nav nav-tabs" style="border-bottom: 0">
+    <li role="presentation" class="{{if isCombined 'active'}}"><a {{action "changeShow" "combined"}}>{{t 'containerLogs.combined'}}</a></li>
+    <li role="presentation" class="{{if isStdOut 'active'}}"><a {{action "changeShow" "stdout"}}>{{t 'containerLogs.stdout'}}</a></li>
+    <li role="presentation" class="{{if isStdErr 'active'}}"><a {{action "changeShow" "stderr"}}>{{t 'containerLogs.stderr'}}</a></li>
+  </ul>
+{{/if}}
+<pre class="log-body {{unless stdErrVisible 'hide-stderr'}} {{unless stdOutVisible 'hide-stdout'}}">
+</pre>
+{{yield}}
+<div class="footer-actions">
+  <div class="console-status text-muted">{{t (concat-str 'containerLogs.status' status character='.')}}</div>
+  <button {{action "scrollToTop"}} class="btn btn-default">{{t 'containerLogs.scrollTop'}}</button>
+  <button {{action "scrollToBottom"}} class="btn btn-default">{{t 'containerLogs.scrollBottom'}}</button>
+  <button {{action "clear"}} class="btn btn-default">{{t 'containerLogs.clear'}}</button>
+  <button {{action "cancel"}} class="btn btn-primary">{{t 'generic.closeModal'}}</button>
+</div>

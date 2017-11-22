@@ -1,0 +1,29 @@
+<td>
+  {{badge-state model=model}}
+</td>
+
+<td>
+  <div class="clip">
+    {{model.displayUri}}
+    {{copy-to-clipboard clipboardText=model.displayUri class="with-clip" size="small"}}
+  </div>
+</td>
+
+<td>
+  {{#if model.mounts.length}}
+    {{#each model.mounts as |mount|}}
+      <div>
+        {{#link-to "container" mount.instanceId}}{{mount.instance.name}}{{/link-to}}:{{mount.path}}
+        {{#if (eq mount.permissions "ro")}}
+          <span class="text-muted">{{t 'volumeRow.mounts.readOnly'}}</span>
+        {{/if}}
+      </div>
+    {{/each}}
+  {{else}}
+    <span class="text-muted">{{t 'generic.none'}}</span>
+  {{/if}}
+</td>
+
+<td class="actions">
+  {{action-menu model=model}}
+</td>

@@ -1,0 +1,19 @@
+{{~#if showDropdown~}}
+  <button type="button" class="btn {{color}} {{btnClass}} dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+    {{t (concat-str 'upgradeBtn.status.' upgradeStatus character='')}}
+    <span class="sr-only">{{t 'nav.srToggleDropdown'}}</span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-right" role="menu">
+    {{#each-in allVersions as |version url|}}
+      <li class="{{if (eq currentVersion version) 'active'}}">
+        <a {{action "changeVersion" version url}}>
+          {{version}}
+        </a>
+      </li>
+    {{/each-in}}
+  </ul>
+{{else}}
+  <button type="button" class="btn {{color}} {{btnClass}}">
+    {{t (concat-str 'upgradeBtn.status.' upgradeStatus character='')}}
+  </button>
+{{/if}}

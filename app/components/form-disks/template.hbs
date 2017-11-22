@@ -1,0 +1,24 @@
+<div class="form-control-static">
+  <button class="btn-circle-text" {{action "addDisk"}}><i class="icon icon-plus-circle"/> <span>{{t 'formDisks.addDiskLabel'}}</span></button>
+  <button class="btn-circle-text r-ml20" {{action "addRootDisk"}} disabled={{hasRoot}}><i class="icon icon-plus-circle"/> <span>{{t 'formDisks.addRootDiskLabel'}}</span></button>
+</div>
+
+{{#if disksArray.length}}
+  <table class="table fixed no-lines no-top-padding tight">
+    <tr class="text-muted">
+      <th>{{t 'formDisks.name.label'}}*</th>
+      <th width="30">&nbsp;</th>
+      <th>{{t 'formDisks.size.label'}}</th>
+      <th width="30">&nbsp;</th>
+      <th width="100">{{t 'formDisks.readIops.label'}}</th>
+      <th width="30">&nbsp;</th>
+      <th width="100">{{t 'formDisks.writeIops.label'}}</th>
+      <th width="30">&nbsp;</th>
+      <th width="130">{{t 'formDisks.driver.label'}}</th>
+      <th width="50"></th>
+    </tr>
+    {{#each disksArray as |disk|}}
+      {{disk-row disk=disk driverChoices=driverChoices remove=(action "removeDisk" disk)}}
+    {{/each}}
+  </table>
+{{/if}}
