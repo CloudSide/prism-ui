@@ -707,7 +707,8 @@ k8sTab:
       helpText: |
         '或通过下面的命令行直接运行 <code>kubectl</code> 命令:'
 loginPage:
-  greeting: "你好！<br>欢迎使用 {appName}"
+  # greeting: "你好！<br>欢迎使用 {appName}"
+  greeting: "你好！<br>欢迎使用边缘计算平台"
   githubMessage: "{appName} 使用GitHub管理账号和团队。点击以下按钮以登录，我们将仅使用基本的GitHub账号信息。"
   shibbolethMessage: "{appName}使用Shibboleth管理账号。点击以下按钮以登录到设置的Shibboleth IDP."
   shibbolethError:
@@ -899,7 +900,7 @@ servicePage:
       body:
         noData: 当前没有日志事件.
   type:
-    service: 服务·
+    service: 服务
     scalinggroup: 伸缩组
     loadbalancerservice: 负载均衡
     dnsservice: 服务别名
@@ -913,7 +914,7 @@ settingsPage:
 stacksPage:
   header:
     all: 全部应用
-    user: 用户应用
+    user: 我的应用
     custom: '{name} 应用'
     tags: '"{tags}" 应用'
     infra: 基础设施应用
@@ -2024,9 +2025,12 @@ heroAddService:
     paragraph: '基础设置应用为{appName}提供新的能力，例如新的编排引擎、存储和网络等。'
   service:
     header: 创建第一个应用
+    #paragraph1: |
+    #  '服务是一组由相同docker镜像创建的容器，服务扩展了Docker的“link”概念以利用{appName}的轻量级分布式DNS服务用于服务发现。服务可以单独添加或通过应用商店部署。'
     paragraph1: |
-      '服务是一组由相同docker镜像创建的容器，服务扩展了Docker的“link”概念以利用{appName}的轻量级分布式DNS服务用于服务发现。服务可以单独添加或通过应用商店部署。'
-    paragraph2: '服务也能够利用其他{appName}内置服务，如负载均衡、健康监控、升级支持以及高可用。'
+       应用是由一个或多个服务组成的，服务是一组由相同docker镜像创建的容器。
+    # paragraph2: '服务也能够利用其他{appName}内置服务，如负载均衡、健康监控、升级支持以及高可用。'
+    paragraph2: '服务能够利用，如负载均衡、健康监控、热升级等特性，支持以及高可用。'
     contentLink: 了解更多
   addService: 定义一个服务
   addCatalog: 配置
@@ -2268,7 +2272,7 @@ loginUserPass:
   userPlaceholder: '例如:jsmith'
   loginLabel: 登录
   loggingInLabel: 登录中...
-  passwordLabl: 密码
+  passwordLabel: 密码
 
 machine:
   driverAmazon:
@@ -2683,7 +2687,7 @@ modalAboutComponent:
   ui: 用户界面
   compose: Compose
   machineService: 主机服务
-  cloe: 关闭
+  close: 关闭
 
 modalAuditlogInfo:
   header: 额外日志信息
@@ -2766,7 +2770,7 @@ modalProcessError:
   cause: "原因:"
   none: N/A
   stackTrace: "堆栈跟踪:"
-  cloe: 关闭
+  close: 关闭
 
 modalRollbackVolume:
   title:
@@ -3222,7 +3226,7 @@ vmConsole:
   canvas: 暂不提供Canvas支持
   footerActions:
     buttonSend: 发送Ctrl-Alt-Delete
-    buttonCancl: 关闭
+    buttonCancel: 关闭
 
 
 volumeRow:
@@ -3417,7 +3421,8 @@ validation:
     between: '"{key}" 应当介于 {min} 和 {max} 之间'
     min: '"{key}" 应当至少为 {val}'
     max: '"{key}" 应当至多为 {val}'
-  chars: '"{key}" 包含 {count, plural, =1 {an invalid character} other {# invalid characters}}: {chars}'
+  # chars: '"{key}" 包含 {count, plural, =1 {an invalid character} other {# invalid characters}}: {chars}'
+  chars: '"{key}" 包含{count, plural, =1 {非法字符} other {#个非法字符}}: {chars}'
 
 ##############################
 # Model Properties

@@ -9,8 +9,8 @@
     descriptionPlaceholder="stacksPage.new.form.description.placeholder"
   }}
 
-  <div class="over-hr"><span>{{t 'stacksPage.new.composeLabel'}}</span></div>
-  <div class="row form-group">
+  <div class="over-hr" style="display:none;"><span>{{t 'stacksPage.new.composeLabel'}}</span></div>
+  <div class="row form-group" style="display:none;">
     <div class="col-sm-12 col-md-6">
       <div class="clearfix r-mb10 r-mt15">
         <label class="r-pt5">{{t 'stacksPage.new.form.dockerCompose.label'}}</label>
@@ -49,7 +49,7 @@
         </div>
         <p class="help-block">{{t 'editStack.group.help'}}</p>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6" style="display:none;">
         <label class="r-pt5">&nbsp;</label>
         <div class="form-control-static checkbox">
           <label>{{input type="checkbox" checked=primaryResource.startOnCreate}} {{t 'stacksPage.new.form.startOnCreate.label'}}</label>

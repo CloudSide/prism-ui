@@ -62,9 +62,9 @@
               <li>{{#link-to "service.new-balancer" (query-params stackId=model.id)}}{{t 'stackSection.add.loadBalancer'}}{{/link-to}}</li>
               <li>{{#link-to "service.new-alias" (query-params stackId=model.id)}}{{t 'stackSection.add.serviceAlias'}}{{/link-to}}</li>
               <li>{{#link-to "service.new-external" (query-params stackId=model.id)}}{{t 'stackSection.add.externalService'}}{{/link-to}}</li>
-              {{#if hasVm}}
+              {{!-- CloudMairo {{#if hasVm}} --}}
                 <li>{{#link-to "service.new-virtualmachine" (query-params stackId=model.id)}}{{t 'stackSection.add.virtualMachine'}}{{/link-to}}</li>
-              {{/if}}
+              {{!-- {{/if}} --}}
             </ul>
           {{/unless}}
         </div>
@@ -85,9 +85,9 @@
       <div class="r-p20 pull-right">
         <label>{{t 'stackSection.tags'}}:&nbsp;</label>
           {{#each model.tags as |tag|}}
-            
+
             {{#link-to "stacks" (query-params tags=tag)}}<span class="badge">{{tag}}</span>{{/link-to}}
-            
+
           {{/each}}
         </div>
       {{/if}}

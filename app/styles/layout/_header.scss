@@ -9,7 +9,7 @@ HEADER {
   .logo {
     display: inline-block;
     height: $navbar-height;
-    width: 68px;
+    width: 152px;
     background-image: url('images/logos/main.svg');
     background-color: $logo-bg;
     background-position: center center;
@@ -64,7 +64,7 @@ HEADER {
     .navbar-brand {
       margin: 0!important;
       float: none;
-      background-size: auto 25px;
+      background-size: auto 22px;
     }
 
     .navbar-toggle {
@@ -103,7 +103,10 @@ HEADER {
         padding        : 0 13px;
         font-weight    : normal;
         text-transform : uppercase;
+        /* CloudMairo
         color          : $lightGray;
+        */
+        color          : white;
         font-size      : 13px;
         display        : block;
 
@@ -119,6 +122,7 @@ HEADER {
         &.active,
          {
           color       : white;
+          background: rgba(0,0,0,.15);
           font-weight : bold;
 
           &:after{

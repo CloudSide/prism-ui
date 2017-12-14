@@ -3,9 +3,11 @@
     <h1>
       {{format-html-message 'loginPage.greeting' appName=settings.appName}}
       <div class="logo"></div>
+      {{!-- <img src="assets/images/logos/main.svg" style="max-width: 210px; margin: 10px auto 0 auto;" /> --}}
     </h1>
     <section class="r-pb0">
-      {{language-dropdown login=true class='r-mt10 r-mb10'}}
+      {{!-- {{language-dropdown login=true class='r-mt10 r-mb10'}} --}}
+      {{!-- <div class="r-mt10 r-mb10'">登录</div> --}}
       <br/>
       {{#if isGithub}}
         <p>{{t 'loginPage.githubMessage' appName=settings.appName}}</p>
@@ -30,7 +32,8 @@
       {{#if isShibboleth}}
         {{login-shibboleth action="started" waiting=waiting}}
       {{/if}}
-      <span style="color: white">{{access.provider}}</span>
+      <span style="color: white;">&nbsp;</span>
+      <span style="color: white; display:none;">{{access.provider}}</span>
     </section>
   </div>
 </div>

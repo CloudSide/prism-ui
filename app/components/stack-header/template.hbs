@@ -31,9 +31,9 @@
           <li>{{#link-to "service.new-balancer" (query-params stackId=model.id)}}{{t 'stackHeader.add.balancer'}}{{/link-to}}</li>
           <li>{{#link-to "service.new-alias" (query-params stackId=model.id)}}{{t 'stackHeader.add.alias'}}{{/link-to}}</li>
           <li>{{#link-to "service.new-external" (query-params stackId=model.id)}}{{t 'stackHeader.add.external'}}{{/link-to}}</li>
-          {{#if hasVm}}
+          {{!-- CloudMairo  {{#if hasVm}} --}}
             <li>{{#link-to "service.new-virtualmachine" (query-params stackId=model.id)}}{{t 'stackHeader.add.vm'}}{{/link-to}}</li>
-          {{/if}}
+          {{!-- {{/if}} --}}
         </ul>
       {{/unless}}
     </div>

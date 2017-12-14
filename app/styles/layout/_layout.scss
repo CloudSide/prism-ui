@@ -367,7 +367,10 @@ TABLE.graphs {
           position : absolute;
           left     : 0;
           right    : 0;
-          bottom   : -37px;
+          bottom   : -39px;
+          background-image: url('images/logos/main-baishan.svg');
+          background-color: $primaryDark;
+          // background-repeat: no-repeat;
         }
   }
 

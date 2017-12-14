@@ -85,7 +85,7 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
       version: pkg.version,
-      appName: 'Rancher',
+      appName: '边缘计算平台',
       apiServer: 'http://localhost:8080',
       legacyApiEndpoint: '/v1',
       apiEndpoint: '/v2-beta',

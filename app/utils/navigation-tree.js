@@ -182,10 +182,14 @@ const navTree = [
     queryParams: {catalogId: 'all'},
     ctx: [getProjectId],
     condition: function() {
+      /* CloudMairo */
+      return false;
+      /* CloudMairo
       return this.get('hasProject') &&
       this.get(`settings.${C.SETTING.CATALOG_URL}`) &&
       !this.get('hasKubernetes') &&
       !this.get('hasSwarm');
+      */
     },
     submenu: getCatalogSubtree,
   },
@@ -218,7 +222,12 @@ const navTree = [
         icon: 'icon icon-vm',
         route: 'virtualmachines',
         ctx: [getProjectId],
-        condition: function() { return this.get('hasVm'); },
+        condition: function() {
+            return true;
+            /* CloudMairo
+            return this.get('hasVm');
+            */
+        },
       },
       {
         id: 'infra-storagepools',
@@ -260,6 +269,15 @@ const navTree = [
       },
     ],
   },
+
+  // registries
+  // {
+  //     id: 'infra-registries',
+  //     localizedLabel: 'nav.infra.registries',
+  //     icon: 'icon icon-database',
+  //     route: 'registries',
+  //     ctx: [getProjectId],
+  // },
 
   // Admin
   {

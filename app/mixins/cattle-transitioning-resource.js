@@ -5,39 +5,43 @@ import { normalizeType } from 'ember-api-store/utils/normalize';
 import C from 'ui/utils/constants';
 
 const defaultStateMap = {
-  'activating':               {icon: 'icon icon-tag',           color: 'text-info'   },
-  'active':                   {icon: 'icon icon-circle-o',      color: 'text-success'},
-  'backedup':                 {icon: 'icon icon-backup',        color: 'text-success'},
-  'created':                  {icon: 'icon icon-tag',           color: 'text-info'   },
-  'creating':                 {icon: 'icon icon-tag',           color: 'text-info'   },
-  'deactivating':             {icon: 'icon icon-adjust',        color: 'text-info'   },
-  'degraded':                 {icon: 'icon icon-alert',         color: 'text-warning'},
-  'disconnected':             {icon: 'icon icon-alert',         color: 'text-warning' },
-  'error':                    {icon: 'icon icon-alert',         color: 'text-danger' },
-  'inactive':                 {icon: 'icon icon-circle',        color: 'text-danger' },
-  'initializing':             {icon: 'icon icon-alert',         color: 'text-warning'},
-  'purged':                   {icon: 'icon icon-purged',        color: 'text-danger' },
-  'purging':                  {icon: 'icon icon-purged',        color: 'text-info'   },
-  'removed':                  {icon: 'icon icon-trash',         color: 'text-danger' },
-  'removing':                 {icon: 'icon icon-trash',         color: 'text-info'   },
-  'requested':                {icon: 'icon icon-tag',           color: 'text-info'   },
-  'registering':              {icon: 'icon icon-tag',           color: 'text-info'   },
-  'reinitializing':           {icon: 'icon icon-alert',         color: 'text-warning'},
-  'restoring':                {icon: 'icon icon-medicalcross',  color: 'text-info'   },
-  'running':                  {icon: 'icon icon-circle-o',      color: 'text-success'},
-  'snapshotted':              {icon: 'icon icon-snapshot',      color: 'text-warning'},
-  'started-once':             {icon: 'icon icon-dot-circlefill',color: 'text-success'},
-  'starting':                 {icon: 'icon icon-adjust',        color: 'text-info'   },
-  'stopped':                  {icon: 'icon icon-circle',        color: 'text-danger' },
-  'stopping':                 {icon: 'icon icon-adjust',        color: 'text-info'   },
-  'unhealthy':                {icon: 'icon icon-alert',         color: 'text-danger' },
-  'updating':                 {icon: 'icon icon-tag',           color: 'text-info'   },
-  'updating-active':          {icon: 'icon icon-tag',           color: 'text-info'   },
-  'updating-healthy':         {icon: 'icon icon-tag',           color: 'text-info'   },
-  'updating-unhealthy':       {icon: 'icon icon-tag',           color: 'text-info'   },
-  'updating-reinitializing':  {icon: 'icon icon-alert',         color: 'text-info'   },
-  'updating-inactive':        {icon: 'icon icon-tag',           color: 'text-info'   },
-  'waiting':                  {icon: 'icon icon-tag',           color: 'text-info'   },
+  'activating':                 {icon: 'icon icon-tag',             color: 'text-info',         text: '正在激活'},
+  'active':                     {icon: 'icon icon-circle-o',        color: 'text-success',      text: '活跃'},
+  'backedup':                   {icon: 'icon icon-backup',          color: 'text-success',      text: ''},
+  'created':                    {icon: 'icon icon-tag',             color: 'text-info',         text: '已创建'},
+  'creating':                   {icon: 'icon icon-tag',             color: 'text-info',         text: '创建中'},
+  'deactivating':               {icon: 'icon icon-adjust',          color: 'text-info',         text: ''},
+  'degraded':                   {icon: 'icon icon-alert',           color: 'text-warning',      text: ''},
+  'disconnected':               {icon: 'icon icon-alert',           color: 'text-warning',      text: '已失联'},
+  'error':                      {icon: 'icon icon-alert',           color: 'text-danger',       text: '错误'},
+  'inactive':                   {icon: 'icon icon-circle',          color: 'text-danger',       text: '已停用'},
+  'initializing':               {icon: 'icon icon-alert',           color: 'text-warning',      text: '正在初始化'},
+  'purged':                     {icon: 'icon icon-purged',          color: 'text-danger',       text: '已清除'},
+  'purging':                    {icon: 'icon icon-purged',          color: 'text-info',         text: '正在清除'},
+  'removed':                    {icon: 'icon icon-trash',           color: 'text-danger',       text: '已删除'},
+  'removing':                   {icon: 'icon icon-trash',           color: 'text-info',         text: '删除中'},
+  'requested':                  {icon: 'icon icon-tag',             color: 'text-info',         text: ''},
+  'registering':                {icon: 'icon icon-tag',             color: 'text-info',         text: ''},
+  'reinitializing':             {icon: 'icon icon-alert',           color: 'text-warning',      text: ''},
+  'restoring':                  {icon: 'icon icon-medicalcross',    color: 'text-info',         text: ''},
+  'running':                    {icon: 'icon icon-circle-o',        color: 'text-success',      text: '运行中'},
+  'snapshotted':                {icon: 'icon icon-snapshot',        color: 'text-warning',      text: ''},
+  'started-once':               {icon: 'icon icon-dot-circlefill',  color: 'text-success',      text: '已运行一次'},
+  'starting':                   {icon: 'icon icon-adjust',          color: 'text-info',         text: '正在启动'},
+  'stopped':                    {icon: 'icon icon-circle',          color: 'text-danger',       text: '已停止'},
+  'stopping':                   {icon: 'icon icon-adjust',          color: 'text-info',         text: '正在停止'},
+  'unhealthy':                  {icon: 'icon icon-alert',           color: 'text-danger',       text: '不健康'},
+  'updating':                   {icon: 'icon icon-tag',             color: 'text-info',         text: '正在更新'},
+  'updating-active':            {icon: 'icon icon-tag',             color: 'text-info',         text: ''},
+  'updating-healthy':           {icon: 'icon icon-tag',             color: 'text-info',         text: ''},
+  'updating-unhealthy':         {icon: 'icon icon-tag',             color: 'text-info',         text: ''},
+  'updating-reinitializing':    {icon: 'icon icon-alert',           color: 'text-info',         text: ''},
+  'updating-inactive':          {icon: 'icon icon-tag',             color: 'text-info',         text: ''},
+  'waiting':                    {icon: 'icon icon-tag',             color: 'text-info',         text: ''},
+  'upgraded':                   {icon: 'icon icon-tag',             color: 'text-success',      text: '已升级'},
+  'upgrading':                  {icon: 'icon icon-tag',             color: '',                  text: '升级中'},
+  'finishing-upgrade':          {icon: 'icon icon-tag',             color: '',                  text: '正在完成升级'},
+  'restarting':                 {icon: 'icon icon-tag',             color: '',                  text: '正在重启'},
 };
 
 const stateColorSortMap = {
@@ -174,7 +178,12 @@ export default Ember.Mixin.create({
 
   displayState: function() {
     var state = this.get('relevantState')||'';
+    // console.log(state);
+    if ( state && defaultStateMap[state] && defaultStateMap[state]['text'] ) {
+        return defaultStateMap[state]['text'];
+    }
     return state.split(/-/).map((word) => {
+      // return defaultStateMap[word] && defaultStateMap[word]['text'] || Util.ucFirst(word);
       return Util.ucFirst(word);
     }).join('-');
   }.property('relevantState'),

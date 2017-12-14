@@ -203,7 +203,7 @@ var C = {
   },
 
   LANGUAGE: {
-    DEFAULT: 'en-us',
+    DEFAULT: 'zh-hans',
     FORMAT_RELATIVE_TIMEOUT: 1000,
     DOCS: ['en'],
   },

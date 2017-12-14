@@ -46,11 +46,11 @@
 
         {{#if hasHosts}}
           {{#link-to "applications-tab" class="btn btn-primary r-mb10"}} {{t 'helpPage.stacks.addServiceLink'}}{{/link-to}}
-          {{#link-to "catalog-tab" class="btn btn-primary"}} {{t 'helpPage.stacks.addCatalogLink'}}{{/link-to}}
+          {{!-- {{#link-to "catalog-tab" class="btn btn-primary"}} {{t 'helpPage.stacks.addCatalogLink'}}{{/link-to}} --}}
         {{else}}
           <div class="alert alert-danger">{{t 'helpPage.stacks.noHosts'}}</div>
           {{#link-to "applications-tab" class="btn btn-primary r-mb10" disabled=true}}{{t 'helpPage.stacks.manageServiceLink'}}{{/link-to}}
-          {{#link-to "catalog-tab" class="btn btn-primary" disabled=true}}{{t 'helpPage.stacks.addCatalogLink'}}{{/link-to}}
+          {{!-- {{#link-to "catalog-tab" class="btn btn-primary" disabled=true}}{{t 'helpPage.stacks.addCatalogLink'}}{{/link-to}} --}}
         {{/if}}
       </div>
     </div>
@@ -177,4 +177,3 @@
     </p>
   </section>
 {{/if}}
-
