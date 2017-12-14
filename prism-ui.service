@@ -1,0 +1,9 @@
+[Unit]
+Description=Prism UI
+[Service]
+TimeoutStartSec=5m
+ExecStart=/bin/bash -c 'cd /usr/local/src/prism-ui && ./scripts/hehe_start'
+Restart=on-failure
+RestartSec=5
+[Install]
+WantedBy=multi-user.target

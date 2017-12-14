@@ -2,4 +2,6 @@
 
 # RANCHER="http://127.0.0.1:18888/" yarn start --ssl=false
 
-RANCHER="http://45.115.145.181:18888/" yarn start --ssl=false
+# RANCHER="http://45.115.145.181:18888/" yarn start --ssl=false
+
+RANCHER="http://127.0.0.1:18888/" yarn start --ssl=false
